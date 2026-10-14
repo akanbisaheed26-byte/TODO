@@ -1,24 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>TaskFlow | Premium To-Do App</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
 
-    <div class="todo">
-        <h1>My To-Do List</h1>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
 
-        <div class="input-area">
-            <input type="text" id="taskInput" placeholder="Enter a task">
-            <button id="addBtn">Add</button>
-        </div>
+    <main class="app-container">
 
-        <ul id="taskList"></ul>
-    </div>
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon">✓</div>
+                <span>TaskFlow</span>
+            </div>
 
-    <script src="index.js"></script>
+            <span class="status-badge">
+                <span class="status-dot"></span>
+                Stay Productive
+            </span>
+        </header>
+
+        <section class="welcome-section">
+            <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+            <h1>Make today <span>count.</span></h1>
+            <p class="subtitle">
+                Organize your tasks, focus on what matters, and get things done.
+            </p>
+        </section>
+
+        <section class="task-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>My Tasks</h2>
+                    <p>Your productivity starts here.</p>
+                </div>
+
+                <div class="task-counter">
+                    <span id="taskCount">0</span>
+                    <small>Tasks</small>
+                </div>
+            </div>
+
+            <form id="taskForm" class="task-form">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you need to do?"
+                    autocomplete="off"
+                    aria-label="Enter a new task"
+                >
+
+                <button type="submit" id="addBtn">
+                    <span class="plus-icon">+</span>
+                    Add Task
+                </button>
+            </form>
+
+            <div class="filter-row">
+                <span class="list-label">YOUR TASK LIST</span>
+                <span id="progressText">0 completed</span>
+            </div>
+
+            <ul id="taskList"></ul>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">✦</div>
+                <h3>Your space is ready</h3>
+                <p>Add your first task and start making progress.</p>
+            </div>
+
+            <footer class="task-footer">
+                <span id="remainingText">0 tasks remaining</span>
+                <button type="button" id="clearCompleted">
+                    Clear completed
+                </button>
+            </footer>
+
+        </section>
+
+        <footer class="page-footer">
+            <p>DESIGNED FOR FOCUS. BUILT FOR PROGRESS.</p>
+        </footer>
+
+    </main>
+
 </body>
 </html>
